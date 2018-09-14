@@ -1,6 +1,9 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
 import './App.css'
+import Title from './title.js'
+import escapeRegExp from 'escape-string-regexp' // need to copy over to search comp
+import sortBy from 'sort-by'  //Need to copy over to Results
 
 class BooksApp extends React.Component {
   state = {
@@ -38,10 +41,8 @@ class BooksApp extends React.Component {
             </div>
           </div>
         ) : (
-          <div className="list-books">
-            <div className="list-books-title">
-              <h1>MyReads</h1>
-            </div>
+          <div className="list-books"> 
+            <Title/> 
             <div className="list-books-content">
               <div>
                 <div className="bookshelf">
