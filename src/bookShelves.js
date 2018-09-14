@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react'
 
+
 class BookShelves extends Component {
 	state = {}
 	render() {
@@ -9,7 +10,7 @@ class BookShelves extends Component {
 
 			<h1 className="book">PLACEHOLDER FOR BOOKS</h1>
 			/*<div className="list-books"> 
-            <Title/> 
+            
             <div className="list-books-content">
               <div>
                 <div className="bookshelf">
