@@ -43,7 +43,7 @@ class BooksApp extends React.Component {
           
          <div>
            <li>
-             <p>{this.state.allBooks}</p>
+             <p>{/*this.state.allBooks*/}</p>
            </li>
          </div>
         
