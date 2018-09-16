@@ -1,3 +1,3 @@
 //Book component 
-import React from 'react'
-
+import React, {Component} from 'react'
+import ShelfChanger from './shelfChanger'

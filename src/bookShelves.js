@@ -1,6 +1,7 @@
 //BookShelves
 
 import React, {Component} from 'react'
+import Search from './search.js'
 
 
 class BookShelves extends Component {
@@ -8,7 +9,16 @@ class BookShelves extends Component {
 	render() {
 		return(
 
-			<h1 className="book">PLACEHOLDER FOR BOOKS</h1>
+      
+        <h1 className="book">PLACEHOLDER FOR BOOKS</h1>
+        
+        
+        
+        
+      
+    
+			
+        
 			/*<div className="list-books"> 
             
             <div className="list-books-content">
@@ -162,7 +172,7 @@ class BookShelves extends Component {
                 </div>
               </div>
             </div> */
-
+            
 
 			)
 	}

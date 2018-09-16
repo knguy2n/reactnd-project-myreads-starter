@@ -3,12 +3,13 @@ import sortBy from 'sort-by'
 import SearchBox from './searchBox.js'
 import Title from './title.js'
 
+
 class SearchPage extends Component {
 	state = {}
 	render() {
 		return(
 			<div className="app">
-				<Title/>
+				{/*<Title/>*/}
 				<SearchBox/>
 			</div>
 			
