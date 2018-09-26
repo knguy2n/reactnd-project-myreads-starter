@@ -12,19 +12,13 @@ class BookShelves extends Component {
         <div className="list-books">
           <div className="list-books-content">
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Currently Reading</h2>
+              <h2 className="bookshelf-title">{this.props.name}</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
                 </ol>
               </div>
 
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Want to Read</h2>
-              <div className="bookshelf-books">
-                <ol className="books-grid">
-                </ol>
-              </div>
-            </div>
+
 
 
 

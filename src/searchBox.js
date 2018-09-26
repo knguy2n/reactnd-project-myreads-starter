@@ -5,10 +5,16 @@ import { Link } from 'react-router-dom'
 
 class SearchBox extends Component {
 	state = {
-		showSearchPage: ''
+		showSearchPage: '',
+    query: ''
 	}
 
+  updateQuery = (query) => (
+    this.setState({query: query.trim() })
+    )
+
 	render() {
+    const { query } = this.state
 		return(
 			<div className="search-books">
             <div className="search-books-bar">
@@ -22,7 +28,11 @@ class SearchBox extends Component {
                   However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
                   you don't find a specific author or title. Every search is limited by search terms.
                 */}
-                <input type="text" placeholder="Search by title or author"/>
+                <input type="text" 
+                placeholder="Search by title or author"
+                value={query}
+                onChange={(e) => this.updateQuery(e.target.value)}
+                />
 
               </div>
             </div>
