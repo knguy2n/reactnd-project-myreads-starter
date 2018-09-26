@@ -6,7 +6,7 @@ import escapeRegExp from 'escape-string-regexp' // need to copy over to search c
 import SearchPage from './searchPage.js'
 import Search from './search.js'
 import { Route } from 'react-router-dom'
-import BookShelves from './bookShelves.js'
+import Shelf from './bookShelves.js'
 
 class BooksApp extends React.Component {
 
@@ -21,16 +21,12 @@ class BooksApp extends React.Component {
   })
 }
 
-
-
-
   render() {
     return (
       <div className="app">
         <Title/>
-        
-        <Route exact path="/" component= { BookShelves } />
-        <Route path='/search' component= {SearchPage}/>       
+        <Route exact path="/" component= { Shelf } />
+        <Route path='/search' component= { SearchPage }/>       
         <Search/> {/*Search Button!*/}   
           
          <div>
