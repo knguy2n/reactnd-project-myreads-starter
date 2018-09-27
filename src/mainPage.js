@@ -6,7 +6,7 @@ import Shelf from './Shelf.js'
 import * as BooksAPI from './BooksAPI.js'
 import PropTypes from 'prop-types'
 
-class MainPage extends React.Component {
+class MainPage extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -18,9 +18,9 @@ class MainPage extends React.Component {
 
 
 	componentDidMount() {
-		BooksAPI.getAll().then((books)=>{
+		BooksAPI.getAll().then((allBooks)=>{
 			this.setState({
-				books: books})
+				books: allBooks})
 		})
 
 	}
