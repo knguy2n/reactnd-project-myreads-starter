@@ -9,7 +9,7 @@ class SearchPage extends Component {
 	render() {
 		return(
 			<div className="app">
-				{/*<Title/>*/}
+				<Title/>
 				<SearchBox/>
 			</div>
 			

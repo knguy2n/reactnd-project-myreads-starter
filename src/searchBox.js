@@ -1,7 +1,7 @@
 // 
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
-
+import escapeRegExp from 'escape-string-regexp' // need to copy over to search comp
 
 class SearchBox extends Component {
 	state = {
