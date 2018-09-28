@@ -26,10 +26,11 @@ class SearchBox extends Component {
 
 
   updateShelf = (book, shelf) => {
-      book.shelf = shelf;
+      
       BooksAPI.update(book, shelf).then(() => { 
             this.setState(state => ({ books: state.books.filter(a => a.id !== book.id).concat({book})
             }));
+      book.shelf = shelf;
         });
     };
 	

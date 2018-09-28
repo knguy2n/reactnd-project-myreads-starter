@@ -24,10 +24,13 @@ class MainPage extends Component {
 
 
 	updateShelf = (book, shelf) => {
-    	book.shelf = shelf;
-    	BooksAPI.update(book, shelf).then(() => { 
-            this.setState(state => ({ books: state.books.filter(a => a.id !== book.id).concat({book})
+    	
+    	BooksAPI.update(book, shelf).then(allBooks => { 
+    		book.shelf = shelf;
+            this.setState(state => ({ 
+            	books: state.books.filter(a => a.id !== book.id).concat([book])
             }));
+
         });
     };
 		

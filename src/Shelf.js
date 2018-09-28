@@ -6,9 +6,7 @@ import Book from './book.js'
 
 class Shelf extends Component {
 
-    componentDidMount() {
-      console.log(this)
-  }
+
   
 
 	
