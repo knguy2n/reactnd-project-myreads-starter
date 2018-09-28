@@ -2,12 +2,37 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import escapeRegExp from 'escape-string-regexp' // need to copy over to search comp
+import * as BooksAPI from './BooksAPI.js'
+
 
 class SearchBox extends Component {
-	state = {
-		showSearchPage: '',
-    query: ''
-	}
+    constructor(props) {
+    super(props)
+    this.state = {
+      books: [],
+      showSearchPage: '',
+      query: '',
+      resultsList: []
+  }
+    }
+  
+
+    
+  componentDidMount() {
+    BooksAPI.getAll().then((allBooks)=>{
+      this.setState({ books: allBooks})
+    });
+  }
+
+
+  updateShelf = (book, shelf) => {
+      book.shelf = shelf;
+      BooksAPI.update(book, shelf).then(() => { 
+            this.setState(state => ({ books: state.books.filter(a => a.id !== book.id).concat({book})
+            }));
+        });
+    };
+	
 
   updateQuery = (query) => (
     this.setState({query: query.trim() })
