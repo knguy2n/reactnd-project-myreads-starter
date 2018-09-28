@@ -4,7 +4,7 @@ import Search from './search.js'
 import React, {Component} from 'react'
 import Shelf from './Shelf.js'
 import * as BooksAPI from './BooksAPI.js'
-import PropTypes from 'prop-types'
+
 
 class MainPage extends Component {
 	constructor(props) {
@@ -14,32 +14,30 @@ class MainPage extends Component {
 		}
 	}
 
-
-
+    
 
 	componentDidMount() {
 		BooksAPI.getAll().then((allBooks)=>{
-			this.setState({
-				books: allBooks})
-		})
-
+			this.setState({ books: allBooks})
+		});
 	}
+
+
+	updateShelf = (book, shelf) => {
+    	book.shelf = shelf;
+    	BooksAPI.update(book, shelf).then(() => { 
+            this.setState(state => ({ books: state.books.filter(a => a.id !== book.id).concat({book})
+            }));
+        });
+    };
 		
-
-
-
-
-
-
-
-
 	render(){
 		return(
 			<div>
 				<Title/>
-				<Shelf name="Currently Reading" books={this.state.books.filter(book => book.shelf ==="currentlyReading")} />
-				<Shelf name="Want to Read" books={this.state.books.filter(book => book.shelf ==="wantToRead")} />
-				<Shelf name="Read" books={this.state.books.filter(book => book.shelf ==="read")} />
+				<Shelf updateShelf={this.updateShelf} name="Currently Reading" books={this.state.books.filter(book => book.shelf ==="currentlyReading")} />
+				<Shelf updateShelf={this.updateShelf}  name="Want to Read" books={this.state.books.filter(book => book.shelf ==="wantToRead")} />
+				<Shelf updateShelf={this.updateShelf}  name="Read" books={this.state.books.filter(book => book.shelf ==="read")} />
 				
 
 				<Search/> {/*Search Button!*/} 	
