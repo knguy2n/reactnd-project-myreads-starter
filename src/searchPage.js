@@ -2,10 +2,8 @@ import React, {Component} from 'react'
 import sortBy from 'sort-by'
 import Title from './title.js'
 import * as BooksAPI from './BooksAPI.js'
-
 import Book from './book.js'
 import { Link } from 'react-router-dom'
-
 
 
 class SearchPage extends Component {
@@ -21,7 +19,7 @@ class SearchPage extends Component {
 	componentDidMount() {
 		BooksAPI.getAll().then((allBooks)=>{
 			this.setState({ books: allBooks})
-			console.log(allBooks)
+			
 		});
 	}
 
