@@ -4,12 +4,7 @@ import React, {Component} from 'react'
 import Book from './book.js'
 
 
-class Shelf extends Component {
-
-
-  
-
-	
+class Shelf extends Component {	
 	render() {
 		return(
  

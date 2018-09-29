@@ -2,20 +2,13 @@ import React, {Component} from 'react'
 import sortBy from 'sort-by'
 import SearchBox from './searchBox.js'
 import Title from './title.js'
-import * as BooksAPI from './BooksAPI.js'
-	
-
-
 class SearchPage extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			books: [],
-			resultsList: []
+			books: []
 		}
-	}
-
-    
+	}   
 
 	componentDidMount() {
 		BooksAPI.getAll().then((allBooks)=>{
@@ -25,12 +18,16 @@ class SearchPage extends Component {
 
 
 	updateShelf = (book, shelf) => {
-    	book.shelf = shelf;
-    	BooksAPI.update(book, shelf).then(() => { 
-            this.setState(state => ({ books: state.books.filter(a => a.id !== book.id).concat({book})
+    	BooksAPI.update(book, shelf).then(allBooks => { 
+    		book.shelf = shelf;
+            this.setState(state => ({ 
+            	books: state.books.filter(a => a.id !== book.id).concat([book])
             }));
+
         });
     };
+
+
 
 
 
